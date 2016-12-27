@@ -138,7 +138,7 @@ extension PickerTextField
         
         let TCHeader: UIView = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
         TCHeader.backgroundColor = background
-        let btnDone =  UIButton(frame: CGRect(x: 250 , y: 0, width: 70, height: 44))
+        let btnDone =  UIButton(frame: CGRect(x: screenWidth - 80 , y: 0, width: 80, height: 44))
         btnDone.setTitle("DONE", for: .normal)
         btnDone.setTitleColor(textColor, for: UIControlState.normal)
         btnDone.backgroundColor = UIColor.clear
