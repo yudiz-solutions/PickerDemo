@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PickerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="24F-NM-oyZ" customClass="PickerTextField" customModule="PickerDemo" customModuleProvider="target">
+                                <rect key="frame" x="40" y="108" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pm5-Wv-ate">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picker Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inh-ux-WnL">
+                                        <rect key="frame" x="139" y="35" width="97" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="inh-ux-WnL" firstAttribute="centerX" secondItem="pm5-Wv-ate" secondAttribute="centerX" id="eLY-Us-oXL"/>
+                                    <constraint firstAttribute="bottom" secondItem="inh-ux-WnL" secondAttribute="bottom" constant="8" id="qm9-i4-JIv"/>
+                                    <constraint firstAttribute="height" constant="64" id="skU-Vh-sKj"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D4E-fv-OoL" customClass="PickerTextField" customModule="PickerDemo" customModuleProvider="target">
+                                <rect key="frame" x="40" y="176" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wHF-wB-oUh"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select blood group &amp; Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nrc-bW-xfu" customClass="PickerTextField" customModule="PickerDemo" customModuleProvider="target">
+                                <rect key="frame" x="40" y="244" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amb-HX-u6G" customClass="PickerTextField" customModule="PickerDemo" customModuleProvider="target">
+                                <rect key="frame" x="40" y="176" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nrc-bW-xfu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="0yK-7u-w8l"/>
+                            <constraint firstItem="24F-NM-oyZ" firstAttribute="top" secondItem="pm5-Wv-ate" secondAttribute="bottom" constant="44" id="1ak-H7-Q4o"/>
+                            <constraint firstItem="D4E-fv-OoL" firstAttribute="baseline" secondItem="amb-HX-u6G" secondAttribute="baseline" id="61W-Iq-7xU"/>
+                            <constraint firstItem="pm5-Wv-ate" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AQj-6M-Zer"/>
+                            <constraint firstItem="amb-HX-u6G" firstAttribute="top" secondItem="24F-NM-oyZ" secondAttribute="bottom" constant="38" id="D2A-42-2ib"/>
+                            <constraint firstAttribute="trailing" secondItem="amb-HX-u6G" secondAttribute="trailing" constant="40" id="GzT-Kv-GRp"/>
+                            <constraint firstItem="Nrc-bW-xfu" firstAttribute="top" secondItem="amb-HX-u6G" secondAttribute="bottom" constant="38" id="IOf-Ti-Hgq"/>
+                            <constraint firstAttribute="trailing" secondItem="pm5-Wv-ate" secondAttribute="trailing" id="Nby-rm-Ye4"/>
+                            <constraint firstAttribute="trailing" secondItem="D4E-fv-OoL" secondAttribute="trailing" constant="40" id="RB2-8X-KH9"/>
+                            <constraint firstItem="D4E-fv-OoL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="Vne-4k-dNe"/>
+                            <constraint firstItem="amb-HX-u6G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="dxi-Z4-PIr"/>
+                            <constraint firstAttribute="trailing" secondItem="24F-NM-oyZ" secondAttribute="trailing" constant="40" id="lnG-js-IYy"/>
+                            <constraint firstItem="24F-NM-oyZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="mgq-ox-rwV"/>
+                            <constraint firstItem="pm5-Wv-ate" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uCB-z4-MgY"/>
+                            <constraint firstAttribute="trailing" secondItem="Nrc-bW-xfu" secondAttribute="trailing" constant="40" id="zzU-aD-SZr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tfAmount" destination="24F-NM-oyZ" id="R6Y-Gw-3FS"/>
+                        <outlet property="tfDate" destination="amb-HX-u6G" id="9zl-sq-TvG"/>
+                        <outlet property="tfbloodGroup" destination="Nrc-bW-xfu" id="IhU-ef-qxL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50" y="-115"/>
+        </scene>
+    </scenes>
+</document>
