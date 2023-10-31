@@ -26,7 +26,7 @@ enum KeyboardType
     case KeyboardTypeASCIICapableNumberPad
     case KeyboardTypeAlphabet
     case KeyboardTypePicker(data:[AnyObject])
-    case KeyboardTypeDatePicker(mode:UIDatePickerMode,minDate:Date, maxDate : Date ,displayFormat:String)
+    case KeyboardTypeDatePicker(mode:UIDatePicker.Mode,minDate:Date, maxDate : Date ,displayFormat:String)
     
 }
 
@@ -77,7 +77,7 @@ class PickerTextField: UITextField,UIPickerViewDelegate,UIPickerViewDataSource {
                 self.setPickerData(data, { (data, comp, row, done) in
                 })
             case .KeyboardTypeDatePicker(let mode,let minDate,let maxDate,let displayFormat):
-                self.setDatePicker(mode, minDate: minDate, maxDate: maxDate, dateFormate: displayFormat, { (date) in
+                self.setDatePicker(mode, minDate: minDate, maxDate: maxDate, dateFormate: displayFormat, { date,strDate,isDone in
                     
                 })
             default:
@@ -91,7 +91,7 @@ class PickerTextField: UITextField,UIPickerViewDelegate,UIPickerViewDataSource {
 
 extension PickerTextField
 {
-    func setDatePicker(_ mode:UIDatePickerMode, minDate : Date? = nil, maxDate : Date? = nil, dateFormate:String,_ block: @escaping datePickerActionBlock){
+    func setDatePicker(_ mode:UIDatePicker.Mode, minDate : Date? = nil, maxDate : Date? = nil, dateFormate:String,_ block: @escaping datePickerActionBlock){
         self.datePickerBlock = block
         self.setHeaderView()
         dateFormatr.dateFormat = dateFormate
@@ -105,6 +105,7 @@ extension PickerTextField
             if maxDate != nil{
                 datePicker?.maximumDate = maxDate
             }
+            datePicker?.preferredDatePickerStyle = .wheels
             datePicker?.addTarget(self, action: #selector(self.dateChanged), for: .valueChanged)
             self.inputView = datePicker
         }
@@ -140,22 +141,22 @@ extension PickerTextField
         TCHeader.backgroundColor = background
         let btnDone =  UIButton(frame: CGRect(x: screenWidth - 80 , y: 0, width: 80, height: 44))
         btnDone.setTitle("DONE", for: .normal)
-        btnDone.setTitleColor(textColor, for: UIControlState.normal)
+        btnDone.setTitleColor(textColor, for: UIControl.State.normal)
         btnDone.backgroundColor = UIColor.clear
-        btnDone.addTarget(self, action: #selector(self.doneAction), for: UIControlEvents.touchUpInside)
+        btnDone.addTarget(self, action: #selector(self.doneAction), for: UIControl.Event.touchUpInside)
         TCHeader.addSubview(btnDone)
         self.inputAccessoryView = TCHeader
     }
     
     //MARK:- Action
     
-    func dateChanged(sender : UIDatePicker)
+    @objc func dateChanged(sender : UIDatePicker)
     {
         self.text = dateFormatr.string(from: (datePicker?.date)!)
         self.datePickerBlock(sender.date ,dateFormatr.string(from: sender.date),false)
     }
     
-    func doneAction() {
+    @objc func doneAction() {
         self .resignFirstResponder()
         if(picker != nil)
         {
